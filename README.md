@@ -3,7 +3,9 @@
 #------------------------------------------------------------------------------------------------------------#
 *************PyBank - Financial Data Analysis Challenge**********************
   a) --Under PyBank Folder -main.py contains the python script
-  b) --Under PyBank/Resources Folder - contains the Budget dataset  
+  
+  b) --Under PyBank/Resources Folder - contains the Budget dataset
+  
   c) --Under PyBank/analysis Folder - contains a text file with output of financial data analysis
 
   ************To Execute PyBank main.py python script ***************
@@ -17,7 +19,9 @@
 
 *************PyPoll - Election Result Analysis Challenge**********************
   a) --Under PyPoll Folder -main.py contains the python script
+  
   b) --Under PyPoll/Resources Folder - contains the election results dataset
+  
   c) --Under PyPoll/analysis Folder - contains a text file with output of election results analysis
 
   ************To Execute PyPoll main.py python script ***************
