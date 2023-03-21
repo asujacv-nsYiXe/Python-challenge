@@ -1,7 +1,9 @@
 # Python-challenge # Module3Assignment
 
 #------------------------------------------------------------------------------------------------------------#
-*************PyBank - Financial Data Analysis Challenge**********************
+
+*************PyBank - Financial Data Analysis Challenge*************
+
   a) --Under PyBank Folder -main.py contains the python script
   
   b) --Under PyBank/Resources Folder - contains the Budget dataset
@@ -17,7 +19,8 @@
 
 #------------------------------------------------------------------------------------------------------------#
 
-*************PyPoll - Election Result Analysis Challenge**********************
+*************PyPoll - Election Result Analysis Challenge*************
+
   a) --Under PyPoll Folder -main.py contains the python script
   
   b) --Under PyPoll/Resources Folder - contains the election results dataset
