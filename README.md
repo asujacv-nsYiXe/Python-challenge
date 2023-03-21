@@ -2,9 +2,9 @@
 
 #------------------------------------------------------------------------------------------------------------#
 *************PyBank - Financial Data Analysis Challenge**********************
-  -- Under PyBank Folder -main.py contains the python script
-  -- Under PyBank/Resources Folder - contains the Budget dataset
-  -- Under PyBank/analysis Folder - contains a text file with output of financial data analysis
+  a) --Under PyBank Folder -main.py contains the python script
+  b) --Under PyBank/Resources Folder - contains the Budget dataset  
+  c) --Under PyBank/analysis Folder - contains a text file with output of financial data analysis
 
   ************To Execute PyBank main.py python script ***************
   1. Open the main.py using visual Studio Code
@@ -16,9 +16,9 @@
 #------------------------------------------------------------------------------------------------------------#
 
 *************PyPoll - Election Result Analysis Challenge**********************
-  -- Under PyPoll Folder -main.py contains the python script
-  -- Under PyPoll/Resources Folder - contains the election results dataset
-  -- Under PyPoll/analysis Folder - contains a text file with output of election results analysis
+  a) --Under PyPoll Folder -main.py contains the python script
+  b) --Under PyPoll/Resources Folder - contains the election results dataset
+  c) --Under PyPoll/analysis Folder - contains a text file with output of election results analysis
 
   ************To Execute PyPoll main.py python script ***************
   1. Open the main.py using visual Studio Code
