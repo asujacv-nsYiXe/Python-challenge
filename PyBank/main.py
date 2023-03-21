@@ -21,15 +21,15 @@ listDate = []               #used to store list of date values from csv data set
 listProfitLoss = []         #used to store list of profitloss values from csv data set
 listChangeInProfitLoss = [] #used to store list of change in profitloss - calcualted value
 
-#get the budget csv dataset path
+#get the budget csv dataset path.
 dataSetFilePath = os.path.join(os.getcwd(),"Resources","budget_data.csv")
 
 #open the csv file and store the data in a reader object
 with open(dataSetFilePath,'r', newline='') as budgetCsvFile:
     budgetCSVDataSet = csv.reader(budgetCsvFile,dialect = "excel", delimiter =',')
     
-    #Read the header and store it in a variable - this will be ignored while creating list
-    budgetFileHeader = next(budgetCSVDataSet)
+    #csv.reader begins reading the CSV file from the first row. Below code will skip the header row
+    next(budgetCSVDataSet, None)
     
     #Read each row from the reader and set the values to list 
     for eachRow in budgetCSVDataSet:
@@ -51,18 +51,19 @@ for eachPLRow in range(1, len(listProfitLoss)):
 avgChange = round(sum(listChangeInProfitLoss)/len(listChangeInProfitLoss),2)
 
 #get the index of the greatest increase in profits over the entire period
-indexGreatestProfitIncrease = listProfitLoss.index((max(listProfitLoss)))
+indexGreatestProfitIncrease = listChangeInProfitLoss.index((max(listChangeInProfitLoss)))
 
 #get the index of the greatest decrease in profits over the entire period
-indexGreatestProfitDecrease = listProfitLoss.index((min(listProfitLoss)))
+indexGreatestProfitDecrease = listChangeInProfitLoss.index((min(listChangeInProfitLoss)))
 
 #Print the financial analysis output to terminal
 print("```\nFinancial Analysis\n----------------------------")
 print(f"Total Months: {totalMonths}")
 print(f"Total: {sumOfProfitLoss}")
 print(f"Average Change: ${avgChange}")
-print(f"Greatest Increase in Profits: {listDate[indexGreatestProfitIncrease]} (${listProfitLoss[indexGreatestProfitIncrease]})")
-print(f"Greatest Decrease in Profits: {listDate[indexGreatestProfitDecrease]} (${listProfitLoss[indexGreatestProfitDecrease]})")
+#Date index should add index plus one since change in profit and loss was calculated starting from second row subtracting first row value
+print(f"Greatest Increase in Profits: {listDate[indexGreatestProfitIncrease+1]} (${listChangeInProfitLoss[indexGreatestProfitIncrease]})")
+print(f"Greatest Decrease in Profits: {listDate[indexGreatestProfitDecrease+1]} (${listChangeInProfitLoss[indexGreatestProfitDecrease]})")
 print("```")
 
 # create a budget analysis results file
@@ -73,9 +74,10 @@ with open(analysisFilePath, 'w') as budgetAnalysis:
     budgetAnalysis.write(f"Total Months: {totalMonths}\n")
     budgetAnalysis.write(f"Total: {sumOfProfitLoss}\n")
     budgetAnalysis.write(f"Average Change: ${avgChange}\n")
-    budgetAnalysis.write(f"Greatest Increase in Profits: {listDate[indexGreatestProfitIncrease]} (${listProfitLoss[indexGreatestProfitIncrease]})\n")
-    budgetAnalysis.write(f"Greatest Decrease in Profits: {listDate[indexGreatestProfitDecrease]} (${listProfitLoss[indexGreatestProfitDecrease]})\n")
+    #Date index should add index plus one since change in profit and loss was calculated starting from second row subtracting first row value
+    budgetAnalysis.write(f"Greatest Increase in Profits: {listDate[indexGreatestProfitIncrease+1]} (${listChangeInProfitLoss[indexGreatestProfitIncrease]})\n")
+    budgetAnalysis.write(f"Greatest Decrease in Profits: {listDate[indexGreatestProfitDecrease+1]} (${listChangeInProfitLoss[indexGreatestProfitDecrease]})\n")
     budgetAnalysis.write("```")
 
-    #close the file  
-    budgetAnalysis.close
+    #No need to manually close the file when using "with Open" Ref - Day 3 class material 
+    

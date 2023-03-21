@@ -31,8 +31,8 @@ electionDataPath = os.path.join(os.getcwd(),"Resources","election_data.csv")
 with open(electionDataPath,'r') as electiondataCsv:
     readElectiondata = csv.reader(electiondataCsv,dialect ="excel", delimiter = ",")
 
-    #Read the header and store it in a variable - this will be ignored while creating list
-    readElectiondataHeader = next(readElectiondata)
+    #csv.reader begins reading the CSV file from the first row. Below code will skip the first header row
+    next(readElectiondata,None)
     
     #Read each row from the reader and set the values to list 
     for eachData in readElectiondata:
@@ -82,5 +82,4 @@ with open(electionAnalysisPath,'w') as ElectionAnlaysisResultFile:
     ElectionAnlaysisResultFile.write(f'Winner: {winnderCandidateName}\n')
     ElectionAnlaysisResultFile.write("-------------------------\n```")
  
-    #close the file   
-    ElectionAnlaysisResultFile.close
+#No need to manually close the file when using "with Open" Ref - Day 3 class material
